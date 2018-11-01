@@ -45,11 +45,21 @@ function calculateCurrency(){
         //to the exchange rate for each country
         //USE THE TABLE PROVIDED FOR VALUES!!!
         var AUD = 1.40885; //exchange rate for Austrialian Dollar
-        var AWG = 1.78511;
+        var AWG = 1.78511; 
+        var BSD = 1.0000;
+        var XBT = 0.00015;
+        var GBP = 0.76826;
+        var CAD = 1.30976;
+        var CLP = 683.205;
+        var CNY = 6.93780;
+        var CUP = 25.0000;
+        var DKK = 6.49079;
+        var EUR = 0.87007;
+        var EGP = 17.8726;
+        var HKD = 7.83955;
+        var IRR = 42000;
+        var NGN = 361.969;
 
-         
-         
-         
          
         
         /*******************************************************************************************
@@ -78,13 +88,104 @@ function calculateCurrency(){
         *********************************************************************************************/
          
          //Calculate the exchange rate and set the country prefix using a selection statement
-
-
-
-
-
-
-
+         
+         switch (country) {
+             case "0":
+                {
+                 exchangeRate = usdAmount * AUD;
+                 countryName = "AUD";
+                 break;
+                }
+             case "1":
+                {
+                 exchangeRate = usdAmount * AWG;
+                 countryName = "AWG";
+                 break;
+                }
+             case "2":
+                {
+                 exchangeRate = usdAmount * BSD;
+                 countryName = "BSD";
+                 break;
+                }
+             case "3":
+                {
+                 exchangeRate = usdAmount * XBT;
+                 countryName = "XBT";
+                 break;
+                }
+             case "4":
+                {
+                 exchangeRate = usdAmount * GBP;
+                 countryName = "GBP";
+                 break;
+                }
+             case "5":
+                {
+                 exchangeRate = usdAmount * CAD;
+                 countryName = "CAD";
+                 break;
+                }
+             case "6":
+                {
+                 exchangeRate = usdAmount * CLP;
+                 countryName = "CLP";
+                 break;
+                }
+             case "7":
+                {
+                 exchangeRate = usdAmount * CNY;
+                 countryName = "CNY";
+                 break;
+                }
+             case "8":
+                {
+                 exchangeRate = usdAmount * CUP;
+                 countryName = "CUP";
+                 break;
+                }
+             case "9":
+                {
+                 exchangeRate = usdAmount * DKK;
+                 countryName = "DKK";
+                 break;
+                }
+             case "10":
+                {
+                 exchangeRate = usdAmount * EUR;
+                 countryName = "EUR";
+                 break;
+                }
+             case "11":
+                {
+                 exchangeRate = usdAmount * EGP;
+                 countryName = "EGP";
+                 break;
+                }
+             case "12":
+                {
+                 exchangeRate = usdAmount * HKD;
+                 countryName = "HKD";
+                 break;
+                }
+             case "13":
+                {
+                 exchangeRate = usdAmount * IRR;
+                 countryName = "IRR";
+                 break;
+                }
+             case "14":
+                {
+                 exchangeRate = usdAmount * NGN;
+                 countryName = "NGN";
+                 break;
+                }
+             default:
+                {
+                 exchangeRate = usdAmount * AUD;
+                 countryName = "AUD";
+                }
+         }
 
 
           
@@ -101,7 +202,7 @@ function calculateCurrency(){
          * 
          *                                INSERT YOUR CODE BELOW!
         ***********************************************************************************************/                                                                                                               
-
+        document.getElementById("currencyExchangeInfo").innerHTML = "SELLING $" + usdAmount + " USD ====> BUYS $" + exchangeRate + countryName;
 
 
 
@@ -141,15 +242,17 @@ function clearButton () {
         *************************************************************************************************************/            
                 
         //This code resets the dropdown menu to "Australian Dollar (AUD)".
-       
+       document.getElementById("country").reset();
         
         
         
         //Remove the text from the textfield
-        
+        document.getElementById("usdAmount").value = "";
         
         
         //Remove the currency exchange information from the document where the id is: "currencyExchangeInfo"
+        document.getElementById("currencyExchangeInfo").innerHTML = "";
+
 
 
 }//end of clearButton function
